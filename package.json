@@ -1,0 +1,24 @@
+{
+  "name": "redacre-code-challenge-back",
+  "version": "1.0.0",
+  "description": "redacre-code-challenge-back",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosival-souza/redacre-code-challenge-back.git"
+  },
+  "author": "Rosival de Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rosival-souza/redacre-code-challenge-back/issues"
+  },
+  "homepage": "https://github.com/rosival-souza/redacre-code-challenge-back#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "knex": "^0.95.10",
+    "mysql2": "^2.3.0"
+  }
+}
