@@ -2,10 +2,11 @@ const express = require('express')
 const app = express()
 const PORT = 4000
 const { version } = require('./package.json')
+const db = require('./mysql2.config')
 
 app.use(express.json())
 
-app.get('/', (_, res) =>{
+app.get('/', (_, res) => {
 
     res.send({
         success: true,
@@ -13,7 +14,64 @@ app.get('/', (_, res) =>{
         dateTime: new Date(),
         version: version,
 
-      })
+    })
+})
+
+app.get('/history', async (_, res) => {
+
+    try {
+
+        const data = await db.getData()
+        res.send({
+            success: true,
+            data: data,
+            message: '/history',
+            dateTime: new Date(),
+            version: version,
+
+        })
+
+    } catch (error) {
+
+        console.log(error)
+
+        res.status(400).send({
+            success: false,
+            message: '/history',
+            dateTime: new Date(),
+            version: version,
+    
+        })
+    }
+
+})
+app.post('/history', async (req, res) => {
+
+    try {
+        await db.addData(req.body)
+        res.send({
+            success: true,
+            body: req.body,
+            message: '/history',
+            dateTime: new Date(),
+            version: version,
+
+        })
+    } catch (error) {
+
+        console.log(error)
+
+        res.status(400).send({
+            success: false,
+            body: req.body,
+            message: '/history',
+            dateTime: new Date(),
+            version: version,
+
+        })
+
+    }
+
 })
 app.listen(PORT, () => {
 
