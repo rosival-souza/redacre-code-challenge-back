@@ -1,6 +1,6 @@
 {
   "name": "redacre-code-challenge-back",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "redacre-code-challenge-back",
   "main": "server.js",
   "scripts": {
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rosival-souza/redacre-code-challenge-back#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "knex": "^0.95.10",
     "mysql2": "^2.3.0"
