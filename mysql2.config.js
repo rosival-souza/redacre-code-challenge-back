@@ -12,7 +12,7 @@ CREATE TABLE `database`.`history` (
 const knex = require('knex')({
     client: 'mysql2',
     connection: {
-        host: process.env.MYSQL_HOST || '127.0.0.1',
+        host: process.env.MYSQL_HOST || 'localhost',
         user: process.env.MYSQL_USER || 'developer',
         password: process.env.MYSQL_PASSWORD || 'developer',
         database: process.env.MYSQL_DATABASE || 'database',
