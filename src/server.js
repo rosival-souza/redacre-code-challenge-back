@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 const PORT = 4000
-const { version } = require('./package.json')
+const { version } = require('../package.json')
 const db = require('./mysql2.config')
 
 app.use(cors())
