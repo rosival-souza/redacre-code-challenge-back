@@ -20,11 +20,11 @@ app.get('/', (_, res) => {
     })
 })
 
-app.get('/history', async (_, res) => {
+app.get('/history/:dateIni/:dateEnd', async (req, res) => {
 
     try {
 
-        const data = await db.getData()
+        const data = await db.getData(req.params)
         res.send({
             success: true,
             data: data,
