@@ -36,7 +36,7 @@ const addData = async (data) => {
     return response
 
 }
-const getData = async () => {
+const getData = async (params) => {
 
     console.log('Init getData...')
     const data = await knex.raw(
@@ -47,8 +47,8 @@ const getData = async () => {
             amount,
             currency_to,
             total,
-            DATE_FORMAT(DATE, '%Y-%m-%d') AS date
-        FROM history`
+            DATE_FORMAT(DATE, '%d/%m/%Y %H:%m:%s') AS date
+        FROM history WHERE DATE(date) BETWEEN '${params.dateIni}' AND '${params.dateEnd}'`
     )
     console.log('End getData...')
     return data[0]
