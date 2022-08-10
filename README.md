@@ -1,6 +1,6 @@
-# redacre-code-challenge-back
+# Build a REST API with Node.js, Express, Docker and MySQL
 
-# 1 - Getting Starting
+## 1 - Getting Starting
 
 Install on your docker application machine and docker compose
 
