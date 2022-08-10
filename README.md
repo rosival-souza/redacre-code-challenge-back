@@ -28,4 +28,4 @@ CREATE TABLE `database`.`history` (
 
 ## 4 - Open you application in localhost
 
-Access Web server: http://localhost:4000/history
+Access your Web server: http://localhost:4000/history
