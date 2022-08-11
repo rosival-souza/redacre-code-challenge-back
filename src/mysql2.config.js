@@ -38,7 +38,10 @@ const addData = async (data) => {
 }
 const getData = async (params) => {
 
-    console.log('Init getData...')
+    console.log('Init getData...', params)
+
+    let type = params.type === 'All' ? '' : params.type
+
     const data = await knex.raw(
         `
         SELECT 
@@ -48,7 +51,9 @@ const getData = async (params) => {
             currency_to,
             total,
             DATE_FORMAT(DATE, '%d/%m/%Y %H:%m:%s') AS date
-        FROM history WHERE DATE(date) BETWEEN '${params.dateIni}' AND '${params.dateEnd}'`
+        FROM history WHERE DATE(date) BETWEEN '${params.dateIni}' AND '${params.dateEnd}'
+        AND currency_to LIKE '%${type}'
+        `
     )
     console.log('End getData...')
     return data[0]

@@ -1,6 +1,6 @@
 {
   "name": "redacre-code-challenge-back",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "redacre-code-challenge-back",
   "main": "server.js",
   "scripts": {

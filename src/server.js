@@ -20,7 +20,7 @@ app.get('/', (_, res) => {
     })
 })
 
-app.get('/history/:dateIni/:dateEnd', async (req, res) => {
+app.get('/history/:dateIni/:dateEnd/:type', async (req, res) => {
 
     try {
 
